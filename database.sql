@@ -1,5 +1,3 @@
--- AI Student Health Chatbot Database Schema
--- Run these commands in your MySQL database
 
 -- Create database
 CREATE DATABASE IF NOT EXISTS health_chatbot;
@@ -28,8 +26,3 @@ CREATE INDEX idx_user_id ON chats(user_id);
 CREATE INDEX idx_timestamp ON chats(timestamp);
 CREATE INDEX idx_username ON users(username);
 
--- Insert sample data (optional)
--- INSERT INTO users (username, password) VALUES 
--- ('testuser', '$2a$10$example_hashed_password_here');
-
-SELECT 'Database schema created successfully!' as message;
