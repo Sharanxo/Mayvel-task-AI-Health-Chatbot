@@ -41,31 +41,12 @@ Before running this application, make sure you have:
    npm install
    ```
 
-3. **Set up MySQL database**
-   - Create a new MySQL database
-   - Import the database schema from `database.sql`
-   ```sql
-   mysql -u your_username -p your_database_name < database.sql
-   ```
-
-4. **Configure environment variables**
-   - Create a `.env` file in the root directory
-   - Add the following variables:
-   ```env
-   DB_HOST=localhost
-   DB_USER=your_mysql_username
-   DB_PASSWORD=your_mysql_password
-   DB_NAME=your_database_name
-   GROQ_API_KEY=your_groq_api_key
-   PORT=3000
-   ```
-
-5. **Start the application**
+3. **Start the application**
    ```bash
    npm run dev
    ```
 
-6. **Access the application**
+4. **Access the application**
    - Open your browser and navigate to `http://localhost:3000`
 
 ## Usage 📱
@@ -108,18 +89,6 @@ The application uses two main tables:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License 📄
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support 💬
-
-If you have any questions or need help with setup, please open an issue in the GitHub repository.
-
----
-
-**Note**: This is a demo application for educational purposes. Always consult with qualified healthcare professionals for medical advice.
-
 ## Features
 
 - **User Authentication**: Secure login/signup system with password hashing
@@ -147,77 +116,6 @@ Before running this application, make sure you have:
 2. **MySQL** (v8.0 or higher) - [Download here](https://dev.mysql.com/downloads/)
 3. **Groq API Key** - [Get it here](https://console.groq.com/)
 
-## Installation & Setup
-
-### 1. Clone or Download the Project
-
-```bash
-# If using git
-git clone <repository-url>
-cd ai-student-health-chatbot
-
-# Or download and extract the ZIP file
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Database Setup
-
-1. **Start MySQL server** on your machine
-2. **Create the database** by running the SQL commands in `database.sql`:
-
-```bash
-# Option 1: Using MySQL command line
-mysql -u root -p < database.sql
-
-# Option 2: Using MySQL Workbench or phpMyAdmin
-# Copy and paste the contents of database.sql and execute
-```
-
-### 4. Environment Configuration
-
-1. **Get your Groq API key**:
-   - Visit [Groq Console](https://console.groq.com/)
-   - Sign up/login and create an API key
-
-2. **Update the `.env` file**:
-   ```env
-   # Database Configuration
-   DB_HOST=localhost
-   DB_USER=root
-   DB_PASSWORD=your_mysql_password
-   DB_NAME=health_chatbot
-   
-   # Session Secret (change this in production)
-   SESSION_SECRET=your-secret-key-here
-   
-   # Groq API Configuration
-   GROQ_API_KEY=your_groq_api_key_here
-   
-   # Server Configuration
-   PORT=3000
-   ```
-
-### 5. Start the Application
-
-```bash
-# Development mode (with auto-restart)
-npm run dev
-
-# Production mode
-npm start
-```
-
-### 6. Access the Application
-
-Open your browser and navigate to:
-```
-http://localhost:3000
-```
 
 ## Usage Guide
 
@@ -262,77 +160,3 @@ ai-student-health-chatbot/
 ├── .env                    # Environment variables
 └── README.md              # This file
 ```
-
-## API Endpoints
-
-- `POST /api/register` - User registration
-- `POST /api/login` - User login
-- `POST /api/logout` - User logout
-- `GET /api/auth-status` - Check authentication status
-- `POST /api/chat` - Send message to chatbot
-- `GET /api/chat-history` - Get user's chat history
-- `GET /api/health-suggestions` - Get personalized health suggestions
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Database Connection Error**
-   - Ensure MySQL is running
-   - Check database credentials in `.env`
-   - Verify database exists and tables are created
-
-2. **Groq API Error**
-   - Verify your API key is correct
-   - Check your Groq account has available credits
-   - Ensure internet connection is stable
-
-3. **Voice Input Not Working**
-   - Voice input requires HTTPS in production
-   - Check browser permissions for microphone access
-   - Supported in Chrome, Firefox, Safari (latest versions)
-
-4. **Port Already in Use**
-   - Change the PORT in `.env` file
-   - Or stop the process using port 3000
-
-### Error Messages
-
-- **"Sorry, I can only help with student health issues"**: The query was not recognized as health-related
-- **"Please log in to access this feature"**: User needs to authenticate
-- **"Database connection failed"**: Check MySQL configuration
-
-## Security Features
-
-- Password hashing using bcryptjs
-- Session-based authentication
-- SQL injection prevention with parameterized queries
-- Input validation and sanitization
-- CORS protection
-
-## Contributing
-
-To contribute to this project:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
-
-## Support
-
-For support or questions:
-
-1. Check the troubleshooting section above
-2. Review the error messages in browser console
-3. Ensure all prerequisites are installed correctly
-4. Verify environment configuration
-
----
-
-**Note**: This chatbot is designed for general health information and should not replace professional medical advice. Always consult healthcare professionals for serious health concerns.
